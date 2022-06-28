@@ -3,7 +3,7 @@
         <ul class="nav flex-column">
             @foreach(\App\Models\Category::all() as $category)
                 <li class="nav-item">
-                    <a class="nav-link" href="}">
+                    <a class="nav-link" href="{{route('admin.products.index', $category->id)}}">
                         <span data-feather="file"></span>
                         {{$category->name}}
                     </a>
