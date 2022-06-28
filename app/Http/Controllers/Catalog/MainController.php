@@ -27,4 +27,9 @@ class MainController extends Controller
         $categoryProduct = Product::where('category_id', $id)->get();
         return view('catalog.category-product', compact('categoryProduct'));
     }
+
+    public function searchProduct(Request $request) {
+        $products = Product::where('title', 'LIKE', "%{$request->search}%")->get();
+        return view('welcome', compact('products'));
+    }
 }

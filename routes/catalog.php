@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\Catalog\MainController::class, 'index'])->name('catalog.index');
 Route::get('/product/{title}', [\App\Http\Controllers\Catalog\MainController::class, 'showProduct'])->name('catalog.show');
 Route::get('/category/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'categoryProduct'])->name('catalog.categoryProduct');
+Route::get('/search', [\App\Http\Controllers\Catalog\MainController::class, 'searchProduct'])->name('search');

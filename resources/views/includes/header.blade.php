@@ -2,7 +2,7 @@
     <div class="container">
         <a class="header-logo" href="{{route('catalog.index')}}">Маркет</a>
 
-        <form method="get" action="" class="search">
+        <form method="get" action="{{route('search')}}" class="search">
             <input class="search-input" type="text" placeholder="Поиск товара..." name="search">
             <button class="search-btn" type="submit">Найти</button>
         </form>
