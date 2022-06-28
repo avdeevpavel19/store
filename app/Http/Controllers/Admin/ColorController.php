@@ -47,4 +47,12 @@ class ColorController extends Controller
             return redirect()->route('admin.colors.index');
         }
     }
+
+    public function delete($id) {
+        $color = Color::where('id', $id)->delete();
+
+        if ($color) {
+            return redirect()->route('admin.colors.index');
+        }
+    }
 }

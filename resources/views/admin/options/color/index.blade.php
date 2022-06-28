@@ -29,7 +29,7 @@
                                 <td>{{$color->name}}</td>
 
                                 <td><a class="btn btn-success" href="{{route('admin.color.edit', $color->id)}}">Редактировать</a></td>
-                                <td><a class="btn btn-danger" href="">Удалить</a></td>
+                                <td><a class="btn btn-danger" href="{{route('admin.color.delete', $color->id)}}">Удалить</a></td>
                             </tr>
                         @endforeach
                     @endforeach
