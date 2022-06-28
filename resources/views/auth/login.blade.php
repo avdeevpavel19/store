@@ -24,7 +24,11 @@
                     @enderror
 
                     <button type="submit" class="authorize__btn">Войти</button>
-                    <a class="no-account" href="{{route('register')}}">Нет аккаунта?</a>
+
+                    <div class="authorize-links">
+                        <a href="{{route('register')}}">Нет аккаунта?</a>
+                        <a href="{{route('password.request')}}">Забыли пароль?</a>
+                    </div>
                 </form>
             </div>
         </div>

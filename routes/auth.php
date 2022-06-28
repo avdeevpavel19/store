@@ -32,3 +32,19 @@ Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'index'
 Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'store']);
 
 Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+Route::get('/forgot-password', [\App\Http\Controllers\Auth\PasswordResetLinkController::class, 'index'])
+    ->middleware('guest')
+    ->name('password.request');
+
+Route::post('/forgot-password', [\App\Http\Controllers\Auth\PasswordResetLinkController::class, 'store'])
+    ->middleware('guest')
+    ->name('password.email');
+
+Route::get('/reset-password/{token}', [\App\Http\Controllers\Auth\NewPasswordController::class, 'index'])
+    ->middleware('guest')
+    ->name('password.reset');
+
+Route::post('/reset-password', [\App\Http\Controllers\Auth\NewPasswordController::class, 'store'])
+    ->middleware('guest')
+    ->name('password.update');
