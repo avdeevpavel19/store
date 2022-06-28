@@ -5,17 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class CategoryProperty extends Model
 {
     use HasFactory;
 
-    protected $table = 'categories';
+    protected $table = 'category_properties';
 
     protected $fillable = [
-        'name',
+        'category_id',
+        'name'
     ];
-
-    public function properties() {
-        return $this->hasMany(CategoryProperty::class);
-    }
 }
