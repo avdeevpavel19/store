@@ -30,4 +30,20 @@ class PropertyController extends Controller
             return redirect()->route('admin.properties.index');
         }
     }
+
+    public function edit($id) {
+        $property = CategoryProperty::find($id);
+
+        return view('admin.options.property.edit', compact('property'));
+    }
+
+    public function editRequest(PropertyRequest $request, $id) {
+        $property = CategoryProperty::find($id);
+
+        $property->name = $request->input('name');
+
+        if ($property->save()) {
+            return redirect()->route('admin.properties.index');
+        }
+    }
 }

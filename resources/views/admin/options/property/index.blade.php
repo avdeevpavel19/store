@@ -28,7 +28,7 @@
                                 <td>{{$category->name}}</td>
                                 <td>{{$property->name}}</td>
 
-                                <td><a class="btn btn-success" href="">Редактировать</a></td>
+                                <td><a class="btn btn-success" href="{{route('admin.property.edit', $property->id)}}">Редактировать</a></td>
                                 <td><a class="btn btn-danger" href="">Удалить</a></td>
                             </tr>
                         @endforeach
