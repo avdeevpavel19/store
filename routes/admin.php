@@ -35,4 +35,5 @@ Route::middleware('admin')->group(function () {
     Route::post('/value/add', [\App\Http\Controllers\Admin\ValueController::class, 'addRequest'])->name('admin.value.add.request');
     Route::get('/value/edit/{id}', [\App\Http\Controllers\Admin\ValueController::class, 'edit'])->name('admin.value.edit');
     Route::post('/value/edit/{id}', [\App\Http\Controllers\Admin\ValueController::class, 'editRequest'])->name('admin.value.edit.request');
+    Route::get('/value/delete/{id}', [\App\Http\Controllers\Admin\ValueController::class, 'delete'])->name('admin.value.delete');
 });

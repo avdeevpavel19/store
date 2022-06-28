@@ -32,7 +32,7 @@
                                     <td>{{$value->name}}</td>
 
                                     <td><a class="btn btn-success" href="{{route('admin.value.edit', $value->id)}}">Редактировать</a></td>
-                                    <td><a class="btn btn-danger" href="">Удалить</a></td>
+                                    <td><a class="btn btn-danger" href="{{route('admin.value.delete', $value->id)}}">Удалить</a></td>
                                 </tr>
                             @endforeach
                         @endforeach

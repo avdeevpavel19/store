@@ -45,4 +45,12 @@ class ValueController extends Controller
             return redirect()->route('admin.values.index');
         }
     }
+
+    public function delete($id) {
+        $value = CategoryPropertyValue::where('id', $id)->delete();
+
+        if ($value) {
+            return redirect()->route('admin.values.index');
+        }
+    }
 }
