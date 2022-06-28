@@ -7,7 +7,7 @@
 
     <section class="reviews">
         <div class="container">
-            <form method="POST" action="" class="review-container">
+            <form method="POST" action="{{route('review.add.request', $product->id)}}" class="review-container">
                 @csrf
                 <div class="reviews-header">
                     <h2 class="reviews-header__title">Отзыв о товаре {{$product->title}}</h2>
