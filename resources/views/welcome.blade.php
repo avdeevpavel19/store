@@ -26,6 +26,10 @@
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{route('logout')}}" class="text-sm text-gray-700 dark:text-gray-500 underline">Выйти</a>
+
+                        @if(auth()->user()->isAdmin == 1)
+                            <a href="{{route('admin.index')}}" class="text-sm text-gray-700 dark:text-gray-500 underline">Админка</a>
+                        @endif
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
 
