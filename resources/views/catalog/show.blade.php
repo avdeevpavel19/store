@@ -47,4 +47,13 @@
                 <p>{{$product->description}}</p>
             </div>
         </div>
+
+        <div class="is-reviews">
+            <div class="is-reviews__container">
+                <div class="is-reviews-header">
+                    <h1 class="is-reviews-header__title">Отзывы <span>12</span></h1>
+                    <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить отзыв</a>
+                </div>
+            </div>
+        </div>
 @endsection

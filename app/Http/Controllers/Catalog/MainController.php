@@ -32,4 +32,9 @@ class MainController extends Controller
         $products = Product::where('title', 'LIKE', "%{$request->search}%")->get();
         return view('welcome', compact('products'));
     }
+
+    public function addReview($id) {
+        $product = Product::find($id);
+        return view('catalog.review-form', compact('product'));
+    }
 }
