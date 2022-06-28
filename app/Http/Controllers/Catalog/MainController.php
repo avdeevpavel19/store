@@ -19,8 +19,12 @@ class MainController extends Controller
     {
         $product = Product::where('id', $id)->first();
 
+        $reviews = Review::with('user')
+            ->where('product_id', Product::find($id)->id)
+            ->get();
+
         if($product) {
-            return view('catalog.show', compact('product'));
+            return view('catalog.show', compact('product', 'reviews'));
         }
     }
 

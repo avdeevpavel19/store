@@ -51,9 +51,30 @@
         <div class="is-reviews">
             <div class="is-reviews__container">
                 <div class="is-reviews-header">
-                    <h1 class="is-reviews-header__title">Отзывы <span>12</span></h1>
+                    <h1 class="is-reviews-header__title">Отзывы <span>{{count($reviews)}}</span></h1>
                     <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить отзыв</a>
                 </div>
+
+                @foreach($reviews as $review)
+                    <div class="review">
+                        <div class="user">
+                            <div class="user__avatar"></div>
+                            <h4 class="user__title">{{$review->user->email}}</h4>
+                        </div>
+
+                        <div class="review__text">
+                            <p>Достоинства: <span>{{$review->like}}</span></p>
+                        </div>
+
+                        <div class="review__text">
+                            <p>Недостатки: <span>{{$review->dislike}}</span></p>
+                        </div>
+
+                        <div class="review__text">
+                            <p>Комментарий: <span>{{$review->other_impressions}}</span></p>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 @endsection

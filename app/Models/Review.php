@@ -18,4 +18,8 @@ class Review extends Model
         'dislike',
         'other_impressions'
     ];
+
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
 }
