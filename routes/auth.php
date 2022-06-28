@@ -27,3 +27,8 @@ Route::get('/email/verify/{id}/{hash}', [\App\Http\Controllers\Auth\RegisterCont
 Route::post('/email/verification-notification', [\App\Http\Controllers\Auth\RegisterController::class, 'sendEmailVerificationNotification'])
     ->middleware(['auth', 'throttle:6,1'])
     ->name('verification.send');
+
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'index'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'store']);
+
+Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');

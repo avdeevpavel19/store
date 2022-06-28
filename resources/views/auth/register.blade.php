@@ -26,7 +26,7 @@
                     @enderror
 
                     <button type="submit" class="registration__btn">Зарегистрироваться</button>
-                    <a class="haveAccount " href="">Есть аккаунт?</a>
+                    <a class="haveAccount " href="{{route('login')}}">Есть аккаунт?</a>
                 </form>
             </div>
         </div>
