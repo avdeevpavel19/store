@@ -46,4 +46,12 @@ class PropertyController extends Controller
             return redirect()->route('admin.properties.index');
         }
     }
+
+    public function delete($id) {
+        $property = CategoryProperty::where('id', $id)->delete();
+
+        if ($property) {
+            return redirect()->route('admin.properties.index');
+        }
+    }
 }

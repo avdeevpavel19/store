@@ -29,7 +29,7 @@
                                 <td>{{$property->name}}</td>
 
                                 <td><a class="btn btn-success" href="{{route('admin.property.edit', $property->id)}}">Редактировать</a></td>
-                                <td><a class="btn btn-danger" href="">Удалить</a></td>
+                                <td><a class="btn btn-danger" href="{{route('admin.property.delete', $property->id)}}">Удалить</a></td>
                             </tr>
                         @endforeach
                     @endforeach

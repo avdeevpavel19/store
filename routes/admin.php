@@ -28,4 +28,6 @@ Route::middleware('admin')->group(function () {
     Route::post('/property/add', [\App\Http\Controllers\Admin\PropertyController::class, 'addRequest'])->name('admin.property.add.request');
     Route::get('/property/edit/{id}', [\App\Http\Controllers\Admin\PropertyController::class, 'edit'])->name('admin.property.edit');
     Route::post('/property/edit/{id}', [\App\Http\Controllers\Admin\PropertyController::class, 'editRequest'])->name('admin.property.edit.request');
+    Route::get('/property/delete/{id}', [\App\Http\Controllers\Admin\PropertyController::class, 'delete'])->name('admin.property.delete');
+
 });
