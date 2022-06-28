@@ -30,14 +30,21 @@
                     </div>
                 </div>
 
-                <div class="addCart">
+                <form class="addCart" action="{{route('add.product.request')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{$product->id}}">
                     <div class="addCart-wrapper">
                         <div class="addCart-wrapper__container">
                             <h3>{{$product->price}} ₽</h3>
-                            <button>Добавить в корзину</button>
+
+                            @if(auth()->user())
+                                <button type="submit" name="addCartBtn">Добавить в корзину</button>
+                            @else
+                                <a href="{{route('login')}}">Войдите, чтобы добавить товар в корзину</a>
+                            @endif
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
         </div>
 
@@ -52,7 +59,9 @@
             <div class="is-reviews__container">
                 <div class="is-reviews-header">
                     <h1 class="is-reviews-header__title">Отзывы <span>{{count($reviews)}}</span></h1>
-                    <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить отзыв</a>
+                    @if(auth()->user())
+                        <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить отзыв</a>
+                    @endif
                 </div>
 
                 <x-review :reviews="$reviews" />

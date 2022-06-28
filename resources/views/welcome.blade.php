@@ -16,7 +16,15 @@
                                 <h3 class="product-price">{{$product->price}}</h3>
                                 <a class="product-title" href="{{route('catalog.show', $product->id)}}">{{$product->title}}</a>
                             </div>
-                            <button class="product-btn">В корзину</button>
+
+                            @if(auth()->user())
+                                <form class="addCart" action="{{route('add.product.request')}}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+
+                                    <button class="product-btn">В корзину</button>
+                                </form>
+                            @endif
                         </div>
                     @endforeach
                 </div>

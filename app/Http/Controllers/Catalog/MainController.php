@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Catalog;
 
 use App\Http\Controllers\Controller;
+use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Review;
+use http\Client\Curl\User;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -54,6 +56,17 @@ class MainController extends Controller
 
         if ($review) {
             return redirect()->route('catalog.show', $id);
+        }
+    }
+
+    public function addProductRequest(Request $request) {
+        $addProduct = Cart::create([
+           'user_id' => auth()->user()->id,
+           'product_id' => $request->input('product_id')
+        ]);
+
+        if($addProduct) {
+            return redirect()->route('catalog.index');
         }
     }
 }

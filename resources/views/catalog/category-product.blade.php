@@ -34,7 +34,15 @@
 
                                 <div class="addCart">
                                     <a class="addCart__total">{{$product->price}}&nbsp₽ </a>
-                                    <button class="addCart__btn">В корзину</button>
+
+                                    @if(auth()->user())
+                                        <form class="addCart" action="{{route('add.product.request')}}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="product_id" value="{{$product->id}}">
+
+                                            <button type="submit" class="addCart__btn">В корзину</button>
+                                        </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>

@@ -19,3 +19,4 @@ Route::get('/category/{id}', [\App\Http\Controllers\Catalog\MainController::clas
 Route::get('/search', [\App\Http\Controllers\Catalog\MainController::class, 'searchProduct'])->name('search');
 Route::get('/review/add/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'addReview'])->name('review.add');
 Route::post('/review/add/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'addReviewRequest'])->name('review.add.request');
+Route::post('/product', [\App\Http\Controllers\Catalog\MainController::class, 'addProductRequest'])->name('add.product.request');
