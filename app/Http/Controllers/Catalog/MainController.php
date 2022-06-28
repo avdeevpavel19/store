@@ -22,4 +22,9 @@ class MainController extends Controller
             return view('catalog.show', compact('product'));
         }
     }
+
+    public function categoryProduct($id) {
+        $categoryProduct = Product::where('category_id', $id)->get();
+        return view('catalog.category-product', compact('categoryProduct'));
+    }
 }

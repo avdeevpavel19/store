@@ -63,7 +63,7 @@
     <div class="container">
         <ul class="category">
             @foreach(\App\Models\Category::all() as $category)
-                <li class="category-item"><a class="category-link" href="">{{$category->name}}</a></li>
+                <li class="category-item"><a class="category-link" href="{{route('catalog.categoryProduct', $category->id)}}">{{$category->name}}</a></li>
             @endforeach
         </ul>
     </div>

@@ -1,0 +1,130 @@
+.container {
+    width: 1530px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-filter {
+    width: 275px;
+    margin-top: 60px;
+}
+
+.menu-filter__title {
+    font-weight: 400;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.price input {
+    width: 125px;
+    padding: 8px 0;
+    outline: 1px solid #C9C9C9;
+    color: #8a8a8a;
+}
+
+.manufacturer {
+    margin-top: 30px;
+}
+
+.checkboxes {
+    display: block;
+    margin-top: 10px;
+}
+
+.checkbox-item {
+    margin-bottom: 5px;
+}
+
+.checkbox-item__label {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-products {
+    width: 75%;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.category-product {
+    width: 100%;
+    border: 1px solid #C9C9C9;
+    padding: 25px 0;
+}
+
+.category-product__container {
+    outline: blue;
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.category-product-data {
+    display: flex;
+}
+
+.category-product-img {
+    height: 165px;
+}
+
+.category-product-text {
+    width: 430px;
+    margin-left: 25px;
+}
+
+.category-product-text__title {
+    font-weight: 400;
+    font-size: 21px;
+    line-height: 25px;
+    color: #3757c5;
+    cursor: pointer;
+}
+
+.category-product-text__review {
+    color: grey;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+.category-product-text__property {
+    color: #333;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.addCart__total {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    color: #222;
+    cursor: pointer;
+    display: block;
+}
+
+.addCart__btn {
+    padding: 11px 0;
+    width: 100%;
+    background: #FFC700;
+    border-radius: 5px;
+    margin-top: 20px;
+}
