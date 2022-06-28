@@ -20,4 +20,8 @@ class Product extends Model
         'brand_id',
         'color_id',
     ];
+
+    public function properties() {
+        return $this->belongsToMany(CategoryPropertyValue::class, 'product_category_property_values', 'product_id', 'property_value_id');
+    }
 }

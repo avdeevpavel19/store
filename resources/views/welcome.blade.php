@@ -14,7 +14,7 @@
                             <img class="product-image" src="{{asset('storage/' . $product->image)}}" alt="">
                             <div class="product-text">
                                 <h3 class="product-price">{{$product->price}}</h3>
-                                <a class="product-title" href="">{{$product->title}}</a>
+                                <a class="product-title" href="{{route('catalog.show', $product->id)}}">{{$product->title}}</a>
                             </div>
                             <button class="product-btn">В корзину</button>
                         </div>
