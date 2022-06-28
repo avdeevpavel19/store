@@ -19,4 +19,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/categories', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin.categories.index');
     Route::get('/category/add', [\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin.category.add');
     Route::post('/category/add', [\App\Http\Controllers\Admin\CategoryController::class, 'addRequest'])->name('admin.category.add.request');
+    Route::get('/category/edit/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin.category.edit');
+    Route::post('/category/edit/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'editRequest'])->name('admin.category.edit.request');
 });

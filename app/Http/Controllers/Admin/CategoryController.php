@@ -28,4 +28,20 @@ class CategoryController extends Controller
             return redirect()->route('admin.categories.index');
         }
     }
+
+    public function edit($id) {
+        $category = Category::find($id);
+        return view('admin.options.category.edit', compact('category'));
+    }
+
+    public function editRequest(CategoryRequest $request, $id)
+    {
+        $category = Category::find($id);
+
+        $category->name = $request->input('name');
+
+        if ($category->save()) {
+            return redirect()->route('admin.categories.index');
+        }
+    }
 }
