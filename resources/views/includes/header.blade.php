@@ -23,13 +23,21 @@
 
                 <ul class="profileMenu" id="profileMenu">
                     <li>
-                        <a href="">
+                        <a href="{{route('profile.index')}}">
                             <div class="profile-info">
                                 <img src="{{asset('images/default-avatar.png')}}" class="profile-info_avatar" id="is_image" alt="">
 
                                 <div class="profile-info_text">
                                     <p>{{Auth::user()->email}}</p>
                                 </div>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{route('profile.index')}}">
+                            <div class="profileMenu-item">
+                                <span>Профиль</span>
                             </div>
                         </a>
                     </li>

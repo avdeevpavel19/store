@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{asset('css/show.css')}}">
     <link rel="stylesheet" href="{{asset('css/category-product.css')}}">
     <link rel="stylesheet" href="{{asset('css/review-form.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/alert-danger.css')}}">
 </head>

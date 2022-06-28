@@ -1,0 +1,34 @@
+.profile-container {
+    width: 1150px;
+    margin: 0 auto;
+}
+
+.profileData {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+
+.profileData-item {
+    width: 155px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.profileData-item__avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+}
+
+.profileData-item__userName {
+    font-size: 22px;
+}
+
+.changeData {
+    font-weight: 400;
+    color: #04b;
+    transition: color .25s ease-out;
+}
