@@ -33,4 +33,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/values', [\App\Http\Controllers\Admin\ValueController::class, 'index'])->name('admin.values.index');
     Route::get('/value/add', [\App\Http\Controllers\Admin\ValueController::class, 'add'])->name('admin.value.add');
     Route::post('/value/add', [\App\Http\Controllers\Admin\ValueController::class, 'addRequest'])->name('admin.value.add.request');
+    Route::get('/value/edit/{id}', [\App\Http\Controllers\Admin\ValueController::class, 'edit'])->name('admin.value.edit');
+    Route::post('/value/edit/{id}', [\App\Http\Controllers\Admin\ValueController::class, 'editRequest'])->name('admin.value.edit.request');
 });

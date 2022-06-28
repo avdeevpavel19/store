@@ -30,4 +30,19 @@ class ValueController extends Controller
             return redirect()->route('admin.values.index');
         }
     }
+
+    public function edit($id) {
+        $value = CategoryPropertyValue::find($id);
+        return view('admin.options.value.edit', compact('value'));
+    }
+
+    public function editRequest(ValueRequest $request, $id) {
+        $value = CategoryPropertyValue::find($id);
+
+        $value->name = $request->input('name');
+
+        if ($value->save()) {
+            return redirect()->route('admin.values.index');
+        }
+    }
 }
