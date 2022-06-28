@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/my/profile', [\App\Http\Controllers\Profile\MainController::class, 'index'])->name('profile.index');
+Route::get('/my/profile/edit', [\App\Http\Controllers\Profile\MainController::class, 'edit'])->name('profile.edit');
+Route::post('/my/profile/edit', [\App\Http\Controllers\Profile\MainController::class, 'editRequest'])->name('profile.edit.request');

@@ -17,7 +17,7 @@
                     <h3 class="profileData-item__userName">awesome</h3>
                 </div>
 
-                <a href="" class="changeData">Изменить данные</a>
+                <a href="{{route('profile.edit')}}" class="changeData">Изменить данные</a>
             </div>
         </div>
     </section>

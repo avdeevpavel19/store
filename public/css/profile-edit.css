@@ -1,0 +1,67 @@
+.container_edit_settings {
+    width: 1530px;
+    margin: 0 auto;
+}
+
+.fsdfgjhk {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+    margin: 0 auto;
+}
+
+.edit-form {
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    padding: 50px;
+    margin-top: 120px;
+    border-radius: 8px;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    background-color: #303030;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.av {
+    cursor: pointer;
+    color: #04b;
+}
+
+.settings-text {
+    width: 180px;
+    margin-top: 25px;
+    line-height: 1.2em;
+}
+
+.btn {
+    margin-top: 8px;
+}
+
+.edit-form__input {
+    padding: 7px 0;
+    width: 100%;
+    border: 2px solid #d9d9d9;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.edit-form__btn {
+    background-color: #fc0;
+    width: 100%;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: all 0.2s ease-out;
+}
+
+.edit-form__btn:hover {
+    transform: scale(1.1);
+}

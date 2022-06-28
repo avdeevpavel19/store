@@ -4,10 +4,25 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
     public function index() {
         return view('profile.index');
+    }
+
+    public function edit() {
+        return view('profile.edit');
+    }
+
+    public function editRequest(Request $request) {
+        $currentUser = Auth::user();
+
+        $currentUser->avatar = $request->file('uploadFile')->store('avatar');
+
+        if ($currentUser->save()) {
+            return redirect()->route('profile.index');
+        }
     }
 }
