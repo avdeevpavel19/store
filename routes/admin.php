@@ -42,4 +42,5 @@ Route::middleware('admin')->group(function () {
     Route::post('/brand/add', [\App\Http\Controllers\Admin\BrandController::class, 'addRequest'])->name('admin.brand.add.request');
     Route::get('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'edit'])->name('admin.brand.edit');
     Route::post('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'editRequest'])->name('admin.brand.edit.request');
+    Route::get('/brand/delete/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'delete'])->name('admin.brand.delete');
 });

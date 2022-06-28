@@ -47,4 +47,12 @@ class BrandController extends Controller
             return redirect()->route('admin.brands.index');
         }
     }
+
+    public function delete($id) {
+        $brand = Brand::where('id', $id)->delete();
+
+        if ($brand) {
+            return redirect()->route('admin.brands.index');
+        }
+    }
 }

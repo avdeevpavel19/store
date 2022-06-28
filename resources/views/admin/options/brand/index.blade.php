@@ -29,7 +29,7 @@
                                 <td>{{$brand->name}}</td>
 
                                 <td><a class="btn btn-success" href="{{route('admin.brand.edit', $brand->id)}}">Редактировать</a></td>
-                                <td><a class="btn btn-danger" href="">Удалить</a></td>
+                                <td><a class="btn btn-danger" href="{{route('admin.brand.delete', $brand->id)}}">Удалить</a></td>
                             </tr>
                         @endforeach
                     @endforeach
