@@ -26,12 +26,21 @@
                 </a>
             </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="{{route('admin.values.index')}}">
-                        <span data-feather="file"></span>
-                        Значения
-                    </a>
-                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.values.index')}}">
+                    <span data-feather="file"></span>
+                    Значения
+                </a>
+            </li>
+
+            <hr>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.brands.index')}}">
+                    <span data-feather="file"></span>
+                    Бренды
+                </a>
+            </li>
 
             <hr>
 

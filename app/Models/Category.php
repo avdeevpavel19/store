@@ -15,7 +15,13 @@ class Category extends Model
         'name',
     ];
 
-    public function properties() {
+    public function properties(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
         return $this->hasMany(CategoryProperty::class);
+    }
+
+    public function brands(): \Illuminate\Database\Eloquent\Relations\hasMany
+    {
+        return $this->hasMany(Brand::class);
     }
 }
