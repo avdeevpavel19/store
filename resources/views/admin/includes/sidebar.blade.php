@@ -1,17 +1,19 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <span data-feather="file"></span>
-                    Смартфоны
-                </a>
-            </li>
+            @foreach(\App\Models\Category::all() as $category)
+                <li class="nav-item">
+                    <a class="nav-link" href="}">
+                        <span data-feather="file"></span>
+                        {{$category->name}}
+                    </a>
+                </li>
+            @endforeach
 
             <hr>
 
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route('admin.categories.index')}}">
                     <span data-feather="file"></span>
                     Категории
                 </a>
