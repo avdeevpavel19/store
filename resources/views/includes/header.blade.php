@@ -8,7 +8,9 @@
         </form>
 
         <ul class="menu">
-            <li class="menu-item"><div class="image"><img src="{{asset('images/basket.png')}}" class="image-item" alt=""></div><a href="" class="menu-link">Корзина</a></li>
+            <a href="{{route('profile.cart')}}">
+                <li class="menu-item"><div class="image"><img src="{{asset('images/basket.png')}}" class="image-item" alt=""></div><a href="" class="menu-link">Корзина</a></li>
+            </a>
 
             @if(Auth::check())
                 <li class="menu-item">
