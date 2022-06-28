@@ -15,4 +15,8 @@ class CategoryProperty extends Model
         'category_id',
         'name'
     ];
+
+    public function values() {
+        return $this->hasMany(CategoryPropertyValue::class);
+    }
 }

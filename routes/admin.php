@@ -30,4 +30,7 @@ Route::middleware('admin')->group(function () {
     Route::post('/property/edit/{id}', [\App\Http\Controllers\Admin\PropertyController::class, 'editRequest'])->name('admin.property.edit.request');
     Route::get('/property/delete/{id}', [\App\Http\Controllers\Admin\PropertyController::class, 'delete'])->name('admin.property.delete');
 
+    Route::get('/values', [\App\Http\Controllers\Admin\ValueController::class, 'index'])->name('admin.values.index');
+    Route::get('/value/add', [\App\Http\Controllers\Admin\ValueController::class, 'add'])->name('admin.value.add');
+    Route::post('/value/add', [\App\Http\Controllers\Admin\ValueController::class, 'addRequest'])->name('admin.value.add.request');
 });
