@@ -43,4 +43,8 @@ Route::middleware('admin')->group(function () {
     Route::get('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'edit'])->name('admin.brand.edit');
     Route::post('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'editRequest'])->name('admin.brand.edit.request');
     Route::get('/brand/delete/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'delete'])->name('admin.brand.delete');
+
+    Route::get('/colors', [\App\Http\Controllers\Admin\ColorController::class, 'index'])->name('admin.colors.index');
+    Route::get('/color/add', [\App\Http\Controllers\Admin\ColorController::class, 'add'])->name('admin.color.add');
+    Route::post('/color/add', [\App\Http\Controllers\Admin\ColorController::class, 'addRequest'])->name('admin.color.add.request');
 });

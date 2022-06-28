@@ -24,4 +24,9 @@ class Category extends Model
     {
         return $this->hasMany(Brand::class);
     }
+
+    public function colors(): \Illuminate\Database\Eloquent\Relations\hasMany
+    {
+        return $this->hasMany(Color::class);
+    }
 }

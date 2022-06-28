@@ -38,7 +38,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{route('admin.brands.index')}}">
                     <span data-feather="file"></span>
-                    Бренды
+                    Бренд
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('admin.colors.index')}}">
+                    <span data-feather="file"></span>
+                    Цвет
                 </a>
             </li>
 
