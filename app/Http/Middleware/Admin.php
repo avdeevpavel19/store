@@ -20,7 +20,7 @@ class Admin
         if (!!Auth::user() && Auth::user()->isAdmin == 1) {
             return $next($request);
         } else {
-            return redirect(route('welcome'));
+            return redirect(route('catalog.index'));
         }
     }
 }

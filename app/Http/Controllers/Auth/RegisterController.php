@@ -37,7 +37,7 @@ class RegisterController extends Controller
     public function emailVerificationRequest(EmailVerificationRequest $request) {
         $request->fulfill();
 
-        return redirect()->route('welcome');
+        return redirect()->route('catalog.index');
     }
 
     public function sendEmailVerificationNotification(RegisterRequest $request) {

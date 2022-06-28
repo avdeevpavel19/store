@@ -20,7 +20,7 @@ class LoginController extends Controller
         ]);
 
         if ($success) {
-            return redirect(route('welcome'));
+            return redirect(route('catalog.index'));
         } else {
             throw ValidationException::withMessages([
                 'exception' => 'Логин или пароль введен не верно',

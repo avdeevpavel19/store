@@ -18,7 +18,7 @@
                                     </div>
 
                                     <div class="category-product-text">
-                                        <a class="category-product-text__title">{{$product->title}}</a>
+                                        <a href="{{route('catalog.show', $product->id)}}" class="category-product-text__title">{{$product->title}}</a>
 
                                         <div class="category-product-text__property">
                                             @foreach($product->properties as $isProduct)
