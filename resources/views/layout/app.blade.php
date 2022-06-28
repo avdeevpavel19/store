@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="{{asset('css/index.css')}}">
     <link rel="stylesheet" href="{{asset('css/auth/register.css')}}">
     <link rel="stylesheet" href="{{asset('css/auth/login.css')}}">
+    <link rel="stylesheet" href="{{asset('css/header.css')}}">
+    <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/alert-danger.css')}}">
 </head>

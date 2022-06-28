@@ -52,7 +52,7 @@
             <hr>
 
             <li class="nav-item">
-                <a class="nav-link" href="{{route('welcome')}}">
+                <a class="nav-link" href="{{route('catalog.index')}}">
                     <span data-feather="file"></span>
                     Выйти
                 </a>
