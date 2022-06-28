@@ -40,4 +40,6 @@ Route::middleware('admin')->group(function () {
     Route::get('/brands', [\App\Http\Controllers\Admin\BrandController::class, 'index'])->name('admin.brands.index');
     Route::get('/brand/add', [\App\Http\Controllers\Admin\BrandController::class, 'add'])->name('admin.brand.add');
     Route::post('/brand/add', [\App\Http\Controllers\Admin\BrandController::class, 'addRequest'])->name('admin.brand.add.request');
+    Route::get('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'edit'])->name('admin.brand.edit');
+    Route::post('/brand/edit/{id}', [\App\Http\Controllers\Admin\BrandController::class, 'editRequest'])->name('admin.brand.edit.request');
 });

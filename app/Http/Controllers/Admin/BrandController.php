@@ -31,4 +31,20 @@ class BrandController extends Controller
             return redirect()->route('admin.brands.index');
         }
     }
+
+    public function edit($id) {
+        $brand = Brand::find($id);
+        return view('admin.options.brand.edit', compact('brand'));
+    }
+
+    public function editRequest(BrandRequest $request, $id)
+    {
+        $brand = Brand::find($id);
+
+        $brand->name = $request->input('name');
+
+        if ($brand->save()) {
+            return redirect()->route('admin.brands.index');
+        }
+    }
 }
