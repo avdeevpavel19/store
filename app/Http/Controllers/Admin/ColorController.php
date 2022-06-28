@@ -22,12 +22,28 @@ class ColorController extends Controller
 
     public function addRequest(ColorRequest $request)
     {
-        $brand = Color::create([
+        $color = Color::create([
             'category_id' => $request->input('category'),
             'name' => $request->input('name')
         ]);
 
-        if ($brand) {
+        if ($color) {
+            return redirect()->route('admin.colors.index');
+        }
+    }
+
+    public function edit($id) {
+        $color = Color::find($id);
+        return view('admin.options.color.edit', compact('color'));
+    }
+
+    public function editRequest(ColorRequest $request, $id)
+    {
+        $color = Color::find($id);
+
+        $color->name = $request->input('name');
+
+        if ($color->save()) {
             return redirect()->route('admin.colors.index');
         }
     }

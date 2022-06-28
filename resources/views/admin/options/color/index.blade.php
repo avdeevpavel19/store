@@ -12,27 +12,27 @@
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Название категории</th>
-                    <th scope="col">Цвет</th>
-                    <th scope="col">Действие</th>
-                </tr>
+                    <tr>
+                        <th scope="col">id</th>
+                        <th scope="col">Название категории</th>
+                        <th scope="col">Цвет</th>
+                        <th scope="col">Действие</th>
+                    </tr>
                 </thead>
 
                 <tbody>
-                @foreach($categories as $category)
-                    @foreach($category->colors as $color)
-                        <tr>
-                            <td>{{$color->id}}</td>
-                            <td>{{$category->name}}</td>
-                            <td>{{$color->name}}</td>
+                    @foreach($categories as $category)
+                        @foreach($category->colors as $color)
+                            <tr>
+                                <td>{{$color->id}}</td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$color->name}}</td>
 
-                            <td><a class="btn btn-success" href="">Редактировать</a></td>
-                            <td><a class="btn btn-danger" href="">Удалить</a></td>
-                        </tr>
+                                <td><a class="btn btn-success" href="{{route('admin.color.edit', $color->id)}}">Редактировать</a></td>
+                                <td><a class="btn btn-danger" href="">Удалить</a></td>
+                            </tr>
+                        @endforeach
                     @endforeach
-                @endforeach
                 </tbody>
             </table>
         </div>
