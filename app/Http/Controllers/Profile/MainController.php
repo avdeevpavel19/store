@@ -36,4 +36,12 @@ class MainController extends Controller
 
         return view('profile.cart', compact('cart'));
     }
+
+    public function deleteProductFromCart($id) {
+        $cart = Cart::where('id', $id)->delete();
+
+        if ($cart) {
+            return redirect()->route('profile.cart');
+        }
+    }
 }

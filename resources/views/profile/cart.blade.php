@@ -29,7 +29,7 @@
                                 </div>
                             </div>
 
-                            <span class="remove">Удалить</span>
+                            <a href="{{route('profile.cart.delete', $get->id)}}" class="remove">Удалить</a>
                         </div>
                     @endforeach
                 </div>
