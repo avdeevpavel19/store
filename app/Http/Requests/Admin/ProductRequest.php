@@ -29,6 +29,7 @@ class ProductRequest extends FormRequest
             'price' => 'required|integer|min:1|max:999999999999',
             'brand' => 'required',
             'color' => 'required',
+            'properties' => 'required',
             'image' => 'required'
         ];
     }
@@ -60,6 +61,9 @@ class ProductRequest extends FormRequest
             'brand.required' => 'Поле бренд обязательно к заполнению',
 
             'color.required' => 'Поле цвет обязательно к заполнению',
+
+            'properties.required' => 'Свойства товара обязательно к заполнению',
+
 
             'image.required' => 'Загрузите изображение товара',
         ];

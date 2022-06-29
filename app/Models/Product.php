@@ -24,4 +24,8 @@ class Product extends Model
     public function properties() {
         return $this->belongsToMany(CategoryPropertyValue::class, 'product_category_property_values', 'product_id', 'property_value_id');
     }
+
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
 }

@@ -8,7 +8,6 @@ use App\Models\Category;
 use App\Models\CategoryPropertyValue;
 use App\Models\Product;
 use App\Models\ProductCategoryPropertyValue;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -52,6 +51,40 @@ class ProductController extends Controller
         }
 
         if ($product && $product_property) {
+            return redirect()->route('admin.products.index', $request->input('categoryId'));
+        }
+    }
+
+    public function edit($id) {
+        $product = Product::with('category')->find($id);
+
+        return view('admin.product.edit', compact('product'));
+    }
+
+    public function editRequest(ProductRequest $request, $id) {
+        $product = Product::find($id);
+
+        $product->title = $request->input('title');
+        $product->description = $request->input('description');
+        $product->price = $request->input('price');
+        $product->image = $request->file('image')->store('products');
+        $product->category_id = $request->input('categoryId');
+        $product->brand_id = $request->input('brand');
+        $product->color_id = $request->input('color');
+
+        $product_property_value = ProductCategoryPropertyValue::where('product_id', $id)->first();
+
+        $properties = CategoryPropertyValue::query()
+            ->whereIn('id', $request->post('properties'))
+            ->get();
+
+        foreach($properties as $property) {
+            $product_property = ProductCategoryPropertyValue::find($product_property_value->id);
+            $product_property->product_id = $product->id;
+            $product_property->property_value_id = $property->id;
+        }
+
+        if ($product->save() && $product_property->save()) {
             return redirect()->route('admin.products.index', $request->input('categoryId'));
         }
     }
