@@ -30,7 +30,7 @@
                             <td>{{$product->price}}</td>
 
                             <td><a class="btn btn-success" href="{{route('admin.product.edit', $product->id)}}">Редактировать</a></td>
-                            <td><a class="btn btn-danger" href="">Удалить</a></td>
+                            <td><a class="btn btn-danger" href="{{route('admin.product.delete', $product->id)}}">Удалить</a></td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -56,4 +56,5 @@ Route::middleware('admin')->group(function () {
     Route::post('/product/category/add', [\App\Http\Controllers\Admin\ProductController::class, 'addRequest'])->name('admin.product.add.request');
     Route::get('/product/edit/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('admin.product.edit');
     Route::post('/product/edit/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'editRequest'])->name('admin.product.edit.request');
+    Route::get('/product/delete/{id}', [\App\Http\Controllers\Admin\ProductController::class, 'delete'])->name('admin.product.delete');
 });

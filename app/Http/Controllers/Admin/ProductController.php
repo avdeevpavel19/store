@@ -88,4 +88,14 @@ class ProductController extends Controller
             return redirect()->route('admin.products.index', $request->input('categoryId'));
         }
     }
+
+    public function delete($id) {
+        $product = Product::with('category')->find($id);
+
+        $isDeleted = Product::where('id', $id)->delete();
+
+        if ($isDeleted) {
+            return redirect()->route('admin.products.index', $product->category->id);
+        }
+    }
 }
