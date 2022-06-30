@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="{{asset('css/auth/register.css')}}">
     <link rel="stylesheet" href="{{asset('css/auth/login.css')}}">
     <link rel="stylesheet" href="{{asset('css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('css/welcome.css')}}">
-    <link rel="stylesheet" href="{{asset('css/show.css')}}">
-    <link rel="stylesheet" href="{{asset('css/category-product.css')}}">
-    <link rel="stylesheet" href="{{asset('css/review-form.css')}}">
-    <link rel="stylesheet" href="{{asset('css/profile.css')}}">
-    <link rel="stylesheet" href="{{asset('css/profile-edit.css')}}">
-    <link rel="stylesheet" href="{{asset('css/cart.css')}}">
+    <link rel="stylesheet" href="{{asset('css/catalog/welcome.css')}}">
+    <link rel="stylesheet" href="{{asset('css/catalog/show.css')}}">
+    <link rel="stylesheet" href="{{asset('css/catalog/category-product.css')}}">
+    <link rel="stylesheet" href="{{asset('css/catalog/review-form.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profile/index.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profile/edit.css')}}">
+    <link rel="stylesheet" href="{{asset('css/profile/cart.css')}}">
 
     <link rel="stylesheet" href="{{asset('css/alert-danger.css')}}">
 </head>

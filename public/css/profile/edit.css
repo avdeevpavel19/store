@@ -1,9 +1,9 @@
-.container_edit_settings {
+.container-edit-settings {
     width: 1530px;
     margin: 0 auto;
 }
 
-.fsdfgjhk {
+.edit-settings {
     display: flex;
     justify-content: space-between;
     width: 320px;
@@ -27,7 +27,7 @@
     margin: 0 auto;
 }
 
-.av {
+.settings-text__avatar {
     cursor: pointer;
     color: #04b;
 }
@@ -38,18 +38,8 @@
     line-height: 1.2em;
 }
 
-.btn {
+.settings-text__btn {
     margin-top: 8px;
-}
-
-.edit-form__input {
-    padding: 7px 0;
-    width: 100%;
-    border: 2px solid #d9d9d9;
-    border-radius: 8px;
-    font-size: 16px;
-    padding-left: 20px;
-    margin-top: 20px;
 }
 
 .edit-form__btn {
@@ -63,5 +53,5 @@
 }
 
 .edit-form__btn:hover {
-    transform: scale(1.1);
+    background-color: #edc009;
 }

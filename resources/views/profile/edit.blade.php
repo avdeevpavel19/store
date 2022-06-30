@@ -6,24 +6,25 @@
     @include('includes.header')
 
     <section class="profile">
-        <div class="container_edit_settings">
-            <div class="fsdfgjhk">
-                    <form action="{{route('profile.edit.request')}}" method="post" class="edit-form" enctype="multipart/form-data">
-                        @csrf
-                    <div class="fsdfgjhk">
-                        <div class="z">
+        <div class="container-edit-settings">
+            <div class="edit-settings">
+                <form action="{{route('profile.edit.request')}}" method="post" class="edit-form" enctype="multipart/form-data">
+                    @csrf
+                    <div class="edit-settings">
+                        <div class="edit-settings__block">
                             @if(auth()->user()->avatar == null)
-                                <img src="{{asset('images/default-avatar.png')}}" class="avatar" id="is_image" alt="">
+                                <img src="{{asset('images/default-avatar.png')}}" class="avatar" id="is-image" alt="">
                             @else
                                 <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="avatar" alt="">
                             @endif
                         </div>
+
                         <div class="settings-text">
                             <span>Это фото используется в ответах, комментариях и отзывах</span>
 
-                            <div class="btn">
+                            <div class="settings-text__btn">
                                 <input type="file" name="uploadFile" id="img" style="display:none;"/>
-                                <label for="img" class="av">Загрузить новое</label>
+                                <label for="img" class="settings-text__avatar">Загрузить новое</label>
                             </div>
                         </div>
                     </div>

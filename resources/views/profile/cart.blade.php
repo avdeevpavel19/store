@@ -9,27 +9,35 @@
         <section class="cart">
             <div class="cart_container">
                 <div class="cart-blocks">
-                    <div class="cart_header">
+                    <div class="cart-header">
                         <h1>Корзина</h1>
                     </div>
 
                     @foreach($cart as $get)
                         <div class="cart-item">
-                            <a href="{{route('catalog.show', $get->product->id)}}">
-                                <img class="cart-item__img" src="{{asset('storage/' . $get->product->image)}}" alt="" height="100">
-                            </a>
-                            <div class="cart-item__right">
-                                <div class="text">
-                                    <a class="cart-item__title"
-                                       href="{{route('catalog.show', $get->product->id)}}">{{$get->product->title}}</a>
+                            <div class="cart-content">
+                                <div class="cart-content__left">
+                                    <a href="{{route('catalog.show', $get->product->id)}}">
+                                        <img class="cart-content__img"
+                                             src="{{asset('storage/' . $get->product->image)}}" alt="" height="100">
+
+                                        <div class="text">
+                                            <a class="cart-content__title"
+                                               href="{{route('catalog.show', $get->product->id)}}">{{$get->product->title}}</a>
+                                        </div>
+                                    </a>
                                 </div>
 
-                                <div class="price">
-                                    <span>{{$get->product->price}}</span><small>₽</small>
+                                <div class="cart-content_right">
+                                    <div class="cart-item__right">
+                                        <div class="price">
+                                            <span>{{$get->product->price}}</span><small>₽</small>
+                                        </div>
+
+                                        <a href="{{route('profile.cart.delete', $get->id)}}" class="remove">Удалить</a>
+                                    </div>
                                 </div>
                             </div>
-
-                            <a href="{{route('profile.cart.delete', $get->id)}}" class="remove">Удалить</a>
                         </div>
                     @endforeach
                 </div>
@@ -61,7 +69,7 @@
         </section>
     @else
         <div class="container">
-            <div class="cart_empty">
+            <div class="cart-empty">
                 <h2>Сложите в корзину нужные товары</h2>
                 <p>А чтобы их найти, загляните в каталог</p>
                 <a href="{{route('catalog.index')}}">На главную</a>

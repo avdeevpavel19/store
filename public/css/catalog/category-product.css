@@ -75,11 +75,11 @@
     justify-content: space-between;
 }
 
-.category-product-data {
+.category-product__data {
     display: flex;
 }
 
-.category-product-img {
+.category-product__img {
     height: 165px;
 }
 
@@ -121,7 +121,7 @@
 }
 
 .addCart__btn {
-    padding: 11px 0;
+    padding: 12px;
     width: 100%;
     background: #FFC700;
     border-radius: 5px;

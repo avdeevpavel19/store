@@ -10,7 +10,7 @@
             <div class="profileData">
                 <div class="profileData-item">
                     @if(auth()->user()->avatar == null)
-                        <img src="{{asset('images/default-avatar.png')}}" class="profileData-item__avatar" id="is_image" alt="">
+                        <img src="{{asset('images/default-avatar.png')}}" class="profileData-item__avatar" id="is-image" alt="">
                     @else
                         <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="profileData-item__avatar" alt="">
                     @endif

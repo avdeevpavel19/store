@@ -60,11 +60,12 @@
                 <div class="is-reviews-header">
                     <h1 class="is-reviews-header__title">Отзывы <span>{{count($reviews)}}</span></h1>
                     @if(auth()->user())
-                        <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить отзыв</a>
+                        <a href="{{route('review.add', $product->id)}}" class="is-reviews-header__btn">Оставить
+                            отзыв</a>
                     @endif
                 </div>
 
-                <x-review :reviews="$reviews" />
+                <x-review :reviews="$reviews"/>
             </div>
         </div>
 @endsection

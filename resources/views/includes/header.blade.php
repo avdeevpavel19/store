@@ -9,16 +9,19 @@
 
         <ul class="menu">
             <a href="{{route('profile.cart')}}">
-                <li class="menu-item"><div class="image"><img src="{{asset('images/basket.png')}}" class="image-item" alt=""></div><a href="" class="menu-link">Корзина</a></li>
+                <li class="menu-item">
+                    <div class="image"><img src="{{asset('images/basket.png')}}" class="image-item" alt=""></div>
+                    <a href="{{route('profile.cart')}}" class="menu-link">Корзина</a>
+                </li>
             </a>
 
             @if(Auth::check())
                 <li class="menu-item">
                     <div class="image">
                         @if(auth()->user()->avatar == null)
-                            <img src="{{asset('images/default-avatar.png')}}" class="profile-info_avatar" id="is_image" alt="">
+                            <img src="{{asset('images/default-avatar.png')}}" class="profile-info__avatar" id="is-image" alt="">
                         @else
-                            <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="profile-info_avatar" id="is_image" alt="">
+                            <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="profile-info__avatar" id="is-image" alt="">
                         @endif
                     </div>
                 </li>
@@ -27,9 +30,9 @@
                     <li>
                         <a href="{{route('profile.index')}}">
                             <div class="profile-info">
-                                <img src="{{asset('images/default-avatar.png')}}" class="profile-info_avatar" id="is_image" alt="">
+                                <img src="{{asset('images/default-avatar.png')}}" class="profile-info__avatar" id="is-image" alt="">
 
-                                <div class="profile-info_text">
+                                <div class="profile-info__text">
                                     <p>{{Auth::user()->email}}</p>
                                 </div>
                             </div>
@@ -63,7 +66,7 @@
                     </li>
                 </ul>
             @else
-                <li class="menu-item"><div class="ima"></div><a href="{{route('login')}}" class="login_btn">Войти</a></li>
+                <li class="menu-item"><a href="{{route('login')}}" class="login-btn">Войти</a></li>
             @endif
         </ul>
     </div>
@@ -80,9 +83,9 @@
 </section>
 
 <script>
-    let avatar = document.getElementById('is_image')
+    let avatar = document.getElementById('is-image')
     let profileMenu = document.getElementById('profileMenu')
-    avatar.addEventListener("click", function(e) {
+    avatar.addEventListener("click", function (e) {
         profileMenu.classList.add("active");
     })
 </script>
