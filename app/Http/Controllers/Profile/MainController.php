@@ -4,13 +4,16 @@ namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
 use App\Models\Cart;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
     public function index() {
-        return view('profile.index');
+        $currentUserId = Auth::user()->id;
+        $user = User::with('reviews')->find($currentUserId);
+        return view('profile.index', compact('user'));
     }
 
     public function edit() {
