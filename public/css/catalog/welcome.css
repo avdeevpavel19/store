@@ -59,3 +59,22 @@
 .product-btn:hover {
     transform: scale(1.1);
 }
+
+.productIsMissing {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.productIsMissing__h3 {
+    color: #212121;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.productIsMissing__a {
+    color: #04b;
+    font-size: 16px;
+    line-height: 38px;
+    text-align: center;
+    display: block;
+}
