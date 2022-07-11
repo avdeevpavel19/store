@@ -40,7 +40,7 @@ class RegisterController extends Controller
         return redirect()->route('catalog.index');
     }
 
-    public function sendEmailVerificationNotification(RegisterRequest $request) {
+    public function sendEmailVerificationNotification(Request $request) {
         $request->user()->sendEmailVerificationNotification();
 
         return back()->with('message', 'Отправлена ссылка для подтверждения!');

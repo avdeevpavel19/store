@@ -4,7 +4,11 @@
 
 @section('content')
     <h3 class="title">Вам отправлено письмо с подтверждением.Перейдите по ссылке</h3>
-    <a class="sendRepeat" href="{{route('verification.send')}}">Отправить повторно</a>
+
+    <form action="{{route('verification.send')}}" method="POST">
+        @csrf
+        <input class="sendRepeat" type="submit" value="Отправить повторно">
+    </form>
 @endsection
 
 <style>
@@ -23,5 +27,6 @@
         margin: 0 auto;
         display: block;
         width: 165px;
+        cursor: pointer;
     }
 </style>
