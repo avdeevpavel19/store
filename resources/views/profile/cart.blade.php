@@ -47,7 +47,7 @@
                         <div class="infoOrder-text">
                             <h3>Итого</h3>
                             <div class="total">
-                                <span>1245</span>
+                                <span>{{$totalPrice}}</span>
                                 <span>&thinsp;₽</span>
                             </div>
                         </div>

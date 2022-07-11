@@ -10,17 +10,20 @@ use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $currentUserId = Auth::user()->id;
         $user = User::with('reviews')->find($currentUserId);
         return view('profile.index', compact('user'));
     }
 
-    public function edit() {
+    public function edit()
+    {
         return view('profile.edit');
     }
 
-    public function editRequest(Request $request) {
+    public function editRequest(Request $request)
+    {
         $currentUser = Auth::user();
 
         $currentUser->avatar = $request->file('uploadFile')->store('avatar');
@@ -30,17 +33,25 @@ class MainController extends Controller
         }
     }
 
-    public function myCart() {
+    public function userCart()
+    {
         $currentUserId = \auth()->user()->id;
 
         $cart = Cart::with('product')
             ->where('user_id', $currentUserId)
             ->get();
 
-        return view('profile.cart', compact('cart'));
+        $totalPrice = 0;
+
+        foreach ($cart as $item) {
+            $totalPrice += $item->product->price;
+        }
+
+        return view('profile.cart', compact('cart', 'totalPrice'));
     }
 
-    public function deleteProductFromCart($id) {
+    public function deleteProductFromCart($id)
+    {
         $cart = Cart::where('id', $id)->delete();
 
         if ($cart) {
