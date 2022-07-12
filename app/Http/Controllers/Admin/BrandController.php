@@ -10,49 +10,59 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::with('brands')->get();
         return view('admin.options.brand.index', compact('categories'));
     }
 
-    public function add() {
+    public function add()
+    {
         $categories = Category::all();
         return view('admin.options.brand.add', compact('categories'));
     }
 
     public function addRequest(BrandRequest $request)
     {
-        $brand = Brand::create([
-            'category_id' => $request->input('category'),
-            'name' => $request->input('name')
-        ]);
+        try {
+            Brand::create([
+                'category_id' => $request->input('category'),
+                'name' => $request->input('name')
+            ]);
 
-        if ($brand) {
             return redirect()->route('admin.brands.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function edit($id) {
-        $brand = Brand::find($id);
+    public function edit($id)
+    {
+        $brand = Brand::findOrFail($id);
         return view('admin.options.brand.edit', compact('brand'));
     }
 
     public function editRequest(BrandRequest $request, $id)
     {
-        $brand = Brand::find($id);
+        try {
+            $brand = Brand::find($id);
+            $brand->name = $request->input('name');
 
-        $brand->name = $request->input('name');
-
-        if ($brand->save()) {
-            return redirect()->route('admin.brands.index');
+            if ($brand->save()) {
+                return redirect()->route('admin.brands.index');
+            }
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function delete($id) {
-        $brand = Brand::where('id', $id)->delete();
-
-        if ($brand) {
+    public function delete($id)
+    {
+        try {
+            Brand::where('id', $id)->delete();
             return redirect()->route('admin.brands.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 }

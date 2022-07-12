@@ -10,49 +10,59 @@ use Illuminate\Http\Request;
 
 class ColorController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::with('brands')->get();
         return view('admin.options.color.index', compact('categories'));
     }
 
-    public function add() {
+    public function add()
+    {
         $categories = Category::all();
         return view('admin.options.color.add', compact('categories'));
     }
 
     public function addRequest(ColorRequest $request)
     {
-        $color = Color::create([
-            'category_id' => $request->input('category'),
-            'name' => $request->input('name')
-        ]);
+        try {
+            Color::create([
+                'category_id' => $request->input('category'),
+                'name' => $request->input('name')
+            ]);
 
-        if ($color) {
             return redirect()->route('admin.colors.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function edit($id) {
-        $color = Color::find($id);
+    public function edit($id)
+    {
+        $color = Color::findOrFail($id);
         return view('admin.options.color.edit', compact('color'));
     }
 
     public function editRequest(ColorRequest $request, $id)
     {
-        $color = Color::find($id);
+        try {
+            $color = Color::find($id);
+            $color->name = $request->input('name');
 
-        $color->name = $request->input('name');
-
-        if ($color->save()) {
-            return redirect()->route('admin.colors.index');
+            if ($color->save()) {
+                return redirect()->route('admin.colors.index');
+            }
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function delete($id) {
-        $color = Color::where('id', $id)->delete();
-
-        if ($color) {
+    public function delete($id)
+    {
+        try {
+            Color::where('id', $id)->delete();
             return redirect()->route('admin.colors.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 }

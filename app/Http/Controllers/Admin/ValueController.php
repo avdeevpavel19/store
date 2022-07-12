@@ -10,47 +10,59 @@ use Illuminate\Http\Request;
 
 class ValueController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categories = Category::with('properties')->get();
         return view('admin.options.value.index', compact('categories'));
     }
 
-    public function add() {
+    public function add()
+    {
         $categories = Category::with('properties')->get();
         return view('admin.options.value.add', compact('categories'));
     }
 
-    public function addRequest(ValueRequest $request) {
-        $value = CategoryPropertyValue::create([
-            'category_property_id' => $request->input('property'),
-            'name' => $request->input('name')
-        ]);
+    public function addRequest(ValueRequest $request)
+    {
+        try {
+            CategoryPropertyValue::create([
+                'category_property_id' => $request->input('property'),
+                'name' => $request->input('name')
+            ]);
 
-        if ($value) {
             return redirect()->route('admin.values.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function edit($id) {
-        $value = CategoryPropertyValue::find($id);
+    public function edit($id)
+    {
+        $value = CategoryPropertyValue::findOrFail($id);
         return view('admin.options.value.edit', compact('value'));
     }
 
-    public function editRequest(ValueRequest $request, $id) {
-        $value = CategoryPropertyValue::find($id);
+    public function editRequest(ValueRequest $request, $id)
+    {
+        try {
+            $value = CategoryPropertyValue::find($id);
+            $value->name = $request->input('name');
 
-        $value->name = $request->input('name');
-
-        if ($value->save()) {
-            return redirect()->route('admin.values.index');
+            if ($value->save()) {
+                return redirect()->route('admin.values.index');
+            }
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
-    public function delete($id) {
-        $value = CategoryPropertyValue::where('id', $id)->delete();
-
-        if ($value) {
+    public function delete($id)
+    {
+        try {
+            CategoryPropertyValue::where('id', $id)->delete();
             return redirect()->route('admin.values.index');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 }
