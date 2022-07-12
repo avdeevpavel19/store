@@ -36,9 +36,12 @@ class RegisterController extends Controller
     }
 
     public function emailVerificationRequest(EmailVerificationRequest $request) {
-        $request->fulfill();
-
-        return redirect()->route('catalog.index');
+        try {
+            $request->fulfill();
+            return redirect()->route('catalog.index');
+        } catch (\OAuthException $OAuthException) {
+            return abort(403);
+        }
     }
 
     public function sendEmailVerificationNotification(Request $request) {
