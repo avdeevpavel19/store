@@ -16,17 +16,18 @@ class RegisterController extends Controller
     }
 
     public function store(RegisterRequest $request) {
-        $user = User::create([
-            'email' => $request->input('email'),
-            'password' => bcrypt($request->input('password'))
-        ]);
+        try {
+            $user = User::create([
+                'email' => $request->input('email'),
+                'password' => bcrypt($request->input('password'))
+            ]);
 
-        if ($user) {
             event(new Registered($user));
-
             auth("web")->login($user);
 
             return redirect()->route('verification.notice');
+        } catch (\Illuminate\Database\QueryException $queryException) {
+            return abort(500);
         }
     }
 
