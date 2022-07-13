@@ -12,11 +12,13 @@ use Illuminate\Support\Str;
 
 class NewPasswordController extends Controller
 {
-    public function index(Request $request, $token) {
+    public function index(Request $request, $token)
+    {
         return view('auth.reset-password', ['token' => $token, 'request' => $request]);
     }
 
-    public function store(ResetPasswordRequest $request) {
+    public function store(ResetPasswordRequest $request)
+    {
         $status = Password::reset(
             $request->only('email', 'password', 'password_confirmation', 'token'),
             function ($user, $password) {

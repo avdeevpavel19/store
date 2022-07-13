@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ColorRequest;
 use App\Models\Category;
 use App\Models\Color;
-use Illuminate\Http\Request;
 
 class ColorController extends Controller
 {

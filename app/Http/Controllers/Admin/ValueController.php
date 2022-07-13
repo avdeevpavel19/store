@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\ValueRequest;
 use App\Models\Category;
 use App\Models\CategoryPropertyValue;
-use Illuminate\Http\Request;
 
 class ValueController extends Controller
 {

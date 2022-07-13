@@ -29,13 +29,13 @@ class MainController extends Controller
         }
     }
 
-    public function categoryProduct($id)
+    public function productListByCategory($id)
     {
-        $categoryProduct = Product::where('category_id', $id)->get();
-        return view('catalog.category-product', compact('categoryProduct'));
+        $productList = Product::where('category_id', $id)->get();
+        return view('catalog.category-product', compact('productList'));
     }
 
-    public function searchProduct(Request $request)
+    public function searchProducts(Request $request)
     {
         $products = Product::where('title', 'LIKE', "%{$request->search}%")->get();
         return view('welcome', compact('products'));
@@ -72,7 +72,7 @@ class MainController extends Controller
                 'product_id' => $request->input('product_id')
             ]);
 
-            return redirect()->route('catalog.index');
+            return redirect()->route('profile.cart');
         } catch (\Illuminate\Database\QueryException $queryException) {
             return abort(500);
         }

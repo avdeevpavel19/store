@@ -97,9 +97,7 @@ class ProductController extends Controller
             if ($product->save() && $product_property->save()) {
                 return redirect()->route('admin.products.index', $request->input('categoryId'));
             }
-        } catch (\Illuminate\Database\QueryException $queryException) {
-            return abort(500);
-        } catch (\ErrorException $errorException) {
+        } catch (\Illuminate\Database\QueryException|\ErrorException $exception) {
             return abort(500);
         }
     }

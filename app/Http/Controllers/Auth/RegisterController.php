@@ -11,11 +11,13 @@ use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('auth.register');
     }
 
-    public function store(RegisterRequest $request) {
+    public function store(RegisterRequest $request)
+    {
         try {
             $user = User::create([
                 'email' => $request->input('email'),
@@ -31,11 +33,13 @@ class RegisterController extends Controller
         }
     }
 
-    public function verify() {
+    public function verify()
+    {
         return view('auth.verify-email');
     }
 
-    public function emailVerificationRequest(EmailVerificationRequest $request) {
+    public function emailVerificationRequest(EmailVerificationRequest $request)
+    {
         try {
             $request->fulfill();
             return redirect()->route('catalog.index');
@@ -44,7 +48,8 @@ class RegisterController extends Controller
         }
     }
 
-    public function sendEmailVerificationNotification(Request $request) {
+    public function sendEmailVerificationNotification(Request $request)
+    {
         $request->user()->sendEmailVerificationNotification();
 
         return back()->with('message', 'Отправлена ссылка для подтверждения!');
