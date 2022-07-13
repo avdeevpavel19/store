@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "catalog" middleware group. Now create something great!
 |
 */
-Route::middleware('verified')->group(function () {
+Route::middleware('isVerified')->group(function () {
     Route::get('/', [\App\Http\Controllers\Catalog\MainController::class, 'index'])->name('catalog.index');
     Route::get('/product/{title}', [\App\Http\Controllers\Catalog\MainController::class, 'showProduct'])->name('catalog.show');
     Route::get('/category/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'productListByCategory'])->name('catalog.productListByCategory');
