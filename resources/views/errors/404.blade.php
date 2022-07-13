@@ -5,7 +5,7 @@
 <div class="emoji"><img src="{{asset('images/404.gif')}}" width=250 alt=""></div>
 
 <p class="title">Упс!</p>
-<p class="text">Кажется, страница не найдена<br></p>
+<p class="text">Страница не найдена<br></p>
 </body>
 
 <style>

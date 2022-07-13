@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Главная')
+@section('title', 'Товары')
 
 @section('content')
     @include('includes.header')
@@ -9,7 +9,7 @@
         <div class="container">
             <div class="main">
                 <div class="category-products">
-                    @foreach($categoryProduct as $product)
+                    @foreach($productList as $product)
                         <div class="category-product">
                             <div class="category-product__container">
                                 <div class="category-product__data">

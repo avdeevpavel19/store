@@ -5,7 +5,7 @@
 <div class="emoji"><img src="{{asset('images/415.gif')}}" width=250 alt=""></div>
 
 <p class="title">Упс!</p>
-<p class="text">Загружаемый файл недоступен для чтения<br></p>
+<p class="text">Загружаемый файл недоступен<br></p>
 </body>
 
 <style>

@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Главная')
+@section('title', 'Просмотр товара')
 
 @section('content')
     @include('includes.header')

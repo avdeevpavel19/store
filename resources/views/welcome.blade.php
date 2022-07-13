@@ -31,7 +31,7 @@
                         @endforeach
                     @else
                         <div class="productIsMissing">
-                            <h3 class="productIsMissing__h3">Товар отсуствует</h3>
+                            <h3 class="productIsMissing__h3">Товары отсуствует</h3>
                             <a href="{{route('catalog.index')}}" class="productIsMissing__a">На главную</a>
                         </div>
                     @endif

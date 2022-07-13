@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'Восстановление пароля')
+@section('title', 'Восстановить пароль')
 
 @section('content')
     <section class="wrapper">

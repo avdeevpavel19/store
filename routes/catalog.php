@@ -15,8 +15,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('verified')->group(function () {
     Route::get('/', [\App\Http\Controllers\Catalog\MainController::class, 'index'])->name('catalog.index');
     Route::get('/product/{title}', [\App\Http\Controllers\Catalog\MainController::class, 'showProduct'])->name('catalog.show');
-    Route::get('/category/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'categoryProduct'])->name('catalog.categoryProduct');
-    Route::get('/search', [\App\Http\Controllers\Catalog\MainController::class, 'searchProduct'])->name('search');
+    Route::get('/category/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'productListByCategory'])->name('catalog.productListByCategory');
+    Route::get('/search', [\App\Http\Controllers\Catalog\MainController::class, 'searchProducts'])->name('search');
 
     Route::get('/review/add/{id}', [\App\Http\Controllers\Catalog\MainController::class, 'addReview'])
         ->middleware('isAuth')
