@@ -16,7 +16,8 @@ class CategoryPropertyValue extends Model
         'name'
     ];
 
-    public function property() {
+    public function property()
+    {
         return $this->belongsTo(CategoryProperty::class, 'category_property_id');
     }
 }

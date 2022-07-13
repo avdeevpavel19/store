@@ -21,11 +21,13 @@ class Product extends Model
         'color_id',
     ];
 
-    public function properties() {
+    public function properties()
+    {
         return $this->belongsToMany(CategoryPropertyValue::class, 'product_category_property_values', 'product_id', 'property_value_id');
     }
 
-    public function category() {
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 }
