@@ -5,7 +5,7 @@
 @section('content')
     @include('includes.header')
 
-    <div class="product">
+    <div class="show">
         <div class="container">
             <div class="product-item">
                 <div class="product-data">
