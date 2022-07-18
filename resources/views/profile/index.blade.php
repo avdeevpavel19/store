@@ -14,7 +14,7 @@
                     @else
                         <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="profileData-item__avatar" alt="">
                     @endif
-                    <h3 class="profileData-item__userName">awesome</h3>
+                        <h3 class="profileData-item__userName">{{Auth::user()->email}}</h3>
                 </div>
 
                 <a href="{{route('profile.edit')}}" class="changeData">Изменить данные</a>

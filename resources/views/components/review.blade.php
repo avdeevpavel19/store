@@ -1,7 +1,12 @@
 @foreach($reviews as $review)
     <div class="review">
         <div class="user">
-            <div class="user__avatar"></div>
+            @if($review->user->avatar == null)
+                <img src="{{asset('images/default-avatar.png')}}" class="user__avatar" alt="">
+            @else
+                <img src="{{asset('storage/' . $review->user->avatar)}}" class="user__avatar" alt="">
+            @endif
+
             <h4 class="user__title">{{$review->user->email}}</h4>
         </div>
 

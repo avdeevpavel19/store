@@ -30,7 +30,11 @@
                     <li>
                         <a href="{{route('profile.index')}}">
                             <div class="profile-info">
-                                <img src="{{asset('images/default-avatar.png')}}" class="profile-info__avatar" id="is-image" alt="">
+                                @if(auth()->user()->avatar == null)
+                                    <img src="{{asset('images/default-avatar.png')}}" class="profile-info__avatar" id="is-image" alt="">
+                                @else
+                                    <img src="{{asset('storage/' . Auth::user()->avatar)}}" class="profile-info__avatar" id="is-image" alt="">
+                                @endif
 
                                 <div class="profile-info__text">
                                     <p>{{Auth::user()->email}}</p>
